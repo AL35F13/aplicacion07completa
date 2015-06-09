@@ -34,7 +34,10 @@
   <div align="center">
    <div id="jugador">
    </div>
-   <a href="#tablero" id="btnjugar" class="ui-btn ui-icon-arrow-r ui-btn-icon-right ui-shadow-icon ui-btn-corner-all ui-btn-inline">Jugar</a>
+   <div  style="width:50%">
+   <a href="#tablero" id="btnjugar" class="ui-btn ui-icon-carat-r ui-btn-icon-right ui-shadow-icon ui-btn-corner-all">Jugar</a>
+   <a href="#config" id="btnconfigurar" class="ui-btn ui-icon-gear ui-btn-icon-right ui-shadow-icon ui-btn-corner-all">Configurar</a>
+   </div>
    </div>
   </div>
 
@@ -60,6 +63,34 @@
   </div>
  </div>  
  <!-- Juego -->
+ 
+ <!-- Configuracion -->
+ <div data-role="page" id="config" > 
+  <div data-role="header">
+    <h1 align="center">Configuración</h1>
+  </div>  
+ 
+  <div data-role="main" class="ui-content">
+  <div align="center">
+   <div  style="width:50%">
+   <div>
+    <input type="text" id="txtnombre" placeholder="Nombre">
+   </div>
+   <a href="#tablero" id="btnguardar" class="ui-btn ui-icon-user ui-btn-icon-right ui-shadow-icon ui-btn-corner-all">Guardar</a>
+   </div>
+   </div>
+  </div>
+
+  <div data-role="footer">
+   <div align="center">
+   <div  style="width:50%">
+  <a href="#principal" id="btninicio" class="ui-btn ui-icon-home ui-btn-icon-left ui-shadow-icon ui-btn-corner-all ui-btn-inline">Inicio</a>
+    </div>
+    <h1>@Anahi Ramos Martinez</h1>
+    </div>
+  </div>
+ </div>  
+ <!-- Configuracion -->
 
  </body>
 </html> 

@@ -15,6 +15,20 @@ document.addEventListener("deviceready",function(){
 	
 	audio.preloadFX('B4', 'audio/F.mp3', function(){}, function(msg){alert("Error " + msg);});
 	
+	function cargarnombrejugador ()
+	{
+		basedatos.transaction(function(ejecutar){
+			
+			var sql="SELECT NombreUsuario FROM Usuario";
+			
+		    ejecutar.executeSql(sql, undefined, function(ejecutar, resultado)
+			{
+				var datosjugador=resultado.rows.item(0);
+				$('#jugador').text(datosjugador.NombreUsuario);	
+			});	
+	    });
+	}
+	
 	$('#btnjugar').on('tap',function(){
 		var pantalla=$.mobile.gatScreenHeight();
 		var encabezado=$('.ui-header').outerHeight();
@@ -43,19 +57,19 @@ document.addEventListener("deviceready",function(){
 		return q.substring(1);
 	}
 	
-	function cargarnombrejugador ()
-	{
-		basedatos.transaction(function(ejecutar){
-			
-			var sql="SELECT NombreUsuario FROM Usuario";
-			
-		    ejecutar.executeSql(sql, undefined, function(ejecutar, resultado)
-			{
-				var datosjugador=resultado.rows.item(0);
-				$('#jugador').text(datosjugador.NombreUsuario);	
-			});	
-	    });
-	}
+	$('#btnconfigurar').on('tap', function(){
+		$('#txtnombre').val($('#jugador').text());
+	});
+	
+	$('#btnguardar').on('tap', function(){
+		var nuevonombre=$('#txtnombre').val();
+		basedatos.transaction(function(consulta){
+			consulta.executeSql("UPDATE Usuario SET NombreUsuario=? WHERE ClaveUsuario='1';", [nuevonombre]);
+		});
+		
+		cargarnombrejugador();
+	});
+	
 	
 }); 
 });
