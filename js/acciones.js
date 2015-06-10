@@ -42,14 +42,14 @@ document.addEventListener("deviceready",function(){
 		//alert('Encabezado ' + encabezado);
 	});//btnjugar-click
 	
-	$('.cuadro').on('vmousedown',function(){
-		$('#pantalla').append(quien($(this).attr('id')));
-		$(this).addClass('pulsado');
-	});
+	//$('.cuadro').on('vmousedown',function(){
+		//$('#pantalla').append(quien($(this).attr('id')));
+		//$(this).addClass('pulsado');
+	//});
 	
-	$('.cuadro').on('vmouseup',function(){
-		$(this).removeClass('pulsado');
-	});
+	//$('.cuadro').on('vmouseup',function(){
+		//$(this).removeClass('pulsado');
+	//});
 	
 	function quien(q)
 	{
