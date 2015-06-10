@@ -70,6 +70,18 @@ document.addEventListener("deviceready",function(){
 		cargarnombrejugador();
 	});
 	
+	function flash (boton)
+	{
+		boton.stop().animate({opacity:'0.5'}, {duration:80, complete:function(){
+			boton.stop().animate({opacity:'1'}, 200);
+		}
+		});
+	}
+	
+	$('.cuadro').on('tap', function() {
+		flash($(this));
+		audio.play($(this).attr('id'));
+	});
 	
 }); 
 });
